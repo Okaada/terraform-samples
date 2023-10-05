@@ -34,3 +34,5 @@ override.tf.json
 terraform.rc
 
 credentials.txt
+
+*/aws-key.pub

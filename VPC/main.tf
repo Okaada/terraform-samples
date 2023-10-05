@@ -6,13 +6,18 @@ terraform {
       source  = "hashicorp/aws"
       version = "5.17.0"
     }
+    //azurerm caso eu queria trabalhar com azure
+  }
+
+  backend "s3" {
+    bucket = "okadara-remote-state"
+    key    = "aws-vpc/terraform.tfstate"
+    region = "sa-east-1"
   }
 }
 
 provider "aws" {
-  # Configuration options
   region = "sa-east-1"
-
   default_tags {
     tags = {
       owner      = "Ravel Okada"
